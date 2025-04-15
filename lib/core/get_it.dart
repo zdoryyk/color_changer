@@ -1,5 +1,5 @@
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:test_flutter/features/welcome/presentation/bloc/background_color/background_color_cubit.dart';
+import 'package:test_flutter/features/welcome/bloc/background_color/background_color_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 final locator = GetIt.instance;

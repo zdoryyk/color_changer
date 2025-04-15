@@ -40,7 +40,7 @@ class BackgroundColorCubit extends HydratedCubit<BackgroundColorState> {
   void _saveColor(String newColor) {
     final colors = sharedPreferences.getStringList('colors') ?? [];
     if (colors.isNotEmpty) {
-      if (colors.any((element) => element == newColor)) {
+      if (colors.any((color) => color == newColor)) {
         return;
       }
       sharedPreferences.setStringList('colors', [

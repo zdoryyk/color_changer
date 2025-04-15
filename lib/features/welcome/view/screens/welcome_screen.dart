@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test_flutter/core/constants.dart';
 import 'package:test_flutter/features/welcome/models/color_model.dart';
-import 'package:test_flutter/features/welcome/presentation/bloc/background_color/background_color_cubit.dart';
-import 'package:test_flutter/features/welcome/presentation/widgets/widgets.dart';
+import 'package:test_flutter/features/welcome/bloc/background_color/background_color_cubit.dart';
+import 'package:test_flutter/features/welcome/view/widgets/widgets.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
