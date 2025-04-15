@@ -2,17 +2,21 @@ import 'package:equatable/equatable.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:test_flutter/features/welcome/models/color_model.dart';
+import 'package:test_flutter/features/welcome/util/color_generator.dart';
 
 part 'background_color_state.dart';
 
 // I know its not the best practice to use logic with save colors inside Bloc/Cubit, but for this case I think its relevant
 class BackgroundColorCubit extends HydratedCubit<BackgroundColorState> {
   final SharedPreferences sharedPreferences;
-  BackgroundColorCubit({required this.sharedPreferences})
-    : super(BackgroundColorInitial(color: ColorModel.initial()));
+  final ColorGenerator colorGenerator;
+  BackgroundColorCubit({
+    required this.sharedPreferences,
+    required this.colorGenerator,
+  }) : super(BackgroundColorInitial(color: ColorModel.initial()));
 
   void onNextColor() {
-    final newColor = ColorModel.generateRandomColor();
+    final newColor = colorGenerator.generateRandomColor();
     _saveColor(state.color.toString());
     emit(BackgroundColorChange(color: newColor));
   }

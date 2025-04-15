@@ -5,7 +5,7 @@ sealed class BackgroundColorState extends Equatable {
   const BackgroundColorState({required this.color});
 
   @override
-  List<Object> get props => [];
+  List<Object> get props => [color];
 }
 
 final class BackgroundColorInitial extends BackgroundColorState {

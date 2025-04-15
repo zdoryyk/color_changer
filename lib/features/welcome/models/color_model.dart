@@ -1,15 +1,17 @@
 import 'dart:math';
 import 'dart:ui';
 
+import 'package:equatable/equatable.dart';
+
 // Created fast this model, decided to not implement Color Entity
-class ColorModel {
+class ColorModel extends Equatable {
   final int r;
   final int g;
   final int b;
 
-  ColorModel({required this.r, required this.g, required this.b});
+  const ColorModel({required this.r, required this.g, required this.b});
 
-  ColorModel.initial() : r = 0, g = 0, b = 0;
+  const ColorModel.initial() : r = 0, g = 0, b = 0;
 
   factory ColorModel.fromJson(Map<String, dynamic> json) {
     return ColorModel(
@@ -47,6 +49,9 @@ class ColorModel {
   String toString() {
     return '$r,$g,$b';
   }
+
+  @override
+  List<Object?> get props => [r, g, b];
 }
 
 extension ToColor on ColorModel {

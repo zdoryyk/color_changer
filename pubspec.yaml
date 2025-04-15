@@ -18,6 +18,8 @@ dependencies:
   path_provider: ^2.1.0
   hydrated_bloc: ^10.0.0
   shared_preferences: ^2.5.3
+  bloc_test: ^10.0.0
+  mocktail: ^1.0.4
 
 dev_dependencies:
   flutter_test:
