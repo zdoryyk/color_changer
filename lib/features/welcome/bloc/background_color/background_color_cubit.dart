@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:equatable/equatable.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -7,8 +5,7 @@ import 'package:test_flutter/features/welcome/models/color_model.dart';
 
 part 'background_color_state.dart';
 
-// I know its not the best practice to use logic with save colors inside Bloc/Cubit,
-// I didnt have a lot of time ot end this task
+// I know its not the best practice to use logic with save colors inside Bloc/Cubit, but for this case I think its relevant
 class BackgroundColorCubit extends HydratedCubit<BackgroundColorState> {
   final SharedPreferences sharedPreferences;
   BackgroundColorCubit({required this.sharedPreferences})
@@ -27,7 +24,6 @@ class BackgroundColorCubit extends HydratedCubit<BackgroundColorState> {
 
   ColorModel _getPreviousColor() {
     final colors = sharedPreferences.getStringList('colors') ?? [];
-    log(colors.toString());
     final lastColor = colors.first;
     if (colors.length > 1) {
       sharedPreferences.setStringList('colors', [

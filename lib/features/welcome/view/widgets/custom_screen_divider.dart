@@ -6,8 +6,12 @@ class CustomScreenDivider extends StatelessWidget {
     super.key,
     required this.onPressedLeft,
     required this.onPressedRight,
+    this.leftChild,
+    this.rightChild,
   });
 
+  final Widget? leftChild;
+  final Widget? rightChild;
   final VoidCallback onPressedLeft;
   final VoidCallback onPressedRight;
 
@@ -21,6 +25,7 @@ class CustomScreenDivider extends StatelessWidget {
           child: SizedBox(
             height: deviceInfo.height,
             width: deviceInfo.width / 2,
+            child: leftChild,
           ),
         ),
         GestureDetector(
@@ -29,6 +34,7 @@ class CustomScreenDivider extends StatelessWidget {
           child: SizedBox(
             height: deviceInfo.height,
             width: deviceInfo.width / 2,
+            child: rightChild,
           ),
         ),
       ],
