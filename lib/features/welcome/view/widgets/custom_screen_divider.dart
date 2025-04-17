@@ -12,8 +12,8 @@ class CustomScreenDivider extends StatelessWidget {
 
   final Widget? leftChild;
   final Widget? rightChild;
-  final VoidCallback onPressedLeft;
-  final VoidCallback onPressedRight;
+  final VoidCallback? onPressedLeft;
+  final VoidCallback? onPressedRight;
 
   @override
   Widget build(BuildContext context) {
