@@ -2,7 +2,12 @@ import 'dart:math';
 
 import 'package:test_flutter/features/welcome/models/color_model.dart';
 
-class ColorGenerator {
+abstract class IColorGenerator {
+  ColorModel generateRandomColor();
+}
+
+class ColorGenerator extends IColorGenerator {
+  @override
   ColorModel generateRandomColor() {
     final random = Random();
     final r = random.nextInt(256);
